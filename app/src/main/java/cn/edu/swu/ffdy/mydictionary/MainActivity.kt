@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package cn.edu.swu.ffdy.mydictionary.ui
+package cn.edu.swu.ffdy.mydictionary
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.EditText
 import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import cn.edu.swu.ffdy.mydictionary.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -89,6 +89,8 @@ class MainActivity : AppCompatActivity() {
             val tran = manager.beginTransaction()
             tran.replace(R.id.nav_host, MainFragment()).commit()
             buttomNavigationView.selectedItemId = R.id.main_search
+            val editText = findViewById<EditText>(R.id.main_edit)
+            editText.requestFocus()
         }
 
 //        showFragment(TAG_CHAT)

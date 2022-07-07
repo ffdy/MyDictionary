@@ -1,4 +1,4 @@
-package cn.edu.swu.ffdy.mydictionary.service/*
+/*
  * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,23 +14,23 @@ package cn.edu.swu.ffdy.mydictionary.service/*
  * limitations under the License.
  */
 
-import androidx.room.*
-import cn.edu.swu.ffdy.mydictionary.data.TranSearchDb
+package cn.edu.swu.ffdy.mydictionary
 
-@Dao
-interface TranSearchDbDao {
-    @Query("SELECT * FROM history ORDER BY last DESC LIMIT 50")
-    fun getAll(): List<TranSearchDb>
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import cn.edu.swu.ffdy.mydictionary.R
 
-    @Query("SELECT * FROM history WHERE dst = :dst")
-    fun getItemByDst(dst: String): List<TranSearchDb>
 
-    @Query("SELECT * FROM history WHERE src = :src")
-    fun getItemBySrc(src: String): List<TranSearchDb>
+class SettingFragment : Fragment() {
 
-    @Insert
-    fun insertOne(tranSearchDb: TranSearchDb)
-
-    @Delete
-    fun deleteOne(tranSearchDb: TranSearchDb)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_setting, container, false)
+    }
 }

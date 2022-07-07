@@ -32,6 +32,9 @@ interface TranItemDbDao {
 
     @Insert
     fun insertOne(tranItemDb: TranItemDb)
+
+    @Delete
+    fun deleteOne(tranItemDb: TranItemDb)
 //
 //    @Update
 //    fun updateOne(todo: TodoEntity)
