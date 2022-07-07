@@ -33,4 +33,7 @@ interface TranSearchDbDao {
 
     @Delete
     fun deleteOne(tranSearchDb: TranSearchDb)
+
+    @Query("SELECT MAX(id) FROM history")
+    fun getMaxIndex(): Int
 }

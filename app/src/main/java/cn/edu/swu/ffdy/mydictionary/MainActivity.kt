@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
             tran.replace(R.id.nav_host, MainFragment()).commit()
             buttomNavigationView.selectedItemId = R.id.main_search
             val editText = findViewById<EditText>(R.id.main_edit)
-            editText.requestFocus()
+//            editText.requestFocus()
         }
 
 //        showFragment(TAG_CHAT)

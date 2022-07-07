@@ -21,7 +21,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import cn.edu.swu.ffdy.mydictionary.R
+import cn.edu.swu.ffdy.mydictionary.service.TranDbDatabase
 
 
 class SettingFragment : Fragment() {
@@ -32,5 +34,18 @@ class SettingFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_setting, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        initView(view)
+    }
+
+    private fun initView(view: View) {
+        view.findViewById<TextView>(R.id.setting_text_search_num).text =
+            TranDbDatabase.getInstance(context as MainActivity).tranSearchDbDao().getMaxIndex().toString()
+        view.findViewById<TextView>(R.id.setting_text_item_num).text =
+            TranDbDatabase.getInstance(context as MainActivity).tranItemDbDao().getSize().toString()
     }
 }

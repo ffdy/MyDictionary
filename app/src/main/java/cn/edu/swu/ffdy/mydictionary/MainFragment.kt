@@ -26,6 +26,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cn.edu.swu.ffdy.mydictionary.R
@@ -64,8 +65,8 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val editText = view.findViewById<EditText>(R.id.main_edit)
-        ed
-        val searchBtn = view.findViewById<Button>(R.id.main_btn_search)
+//        editText.focusable = true
+        val searchBtn = view.findViewById<ImageButton>(R.id.main_btn_search)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView_history)
 
 //        val db = TranDbDatabase.getInstance(MainActivity())

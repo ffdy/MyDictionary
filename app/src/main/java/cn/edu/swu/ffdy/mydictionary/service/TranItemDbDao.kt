@@ -35,6 +35,9 @@ interface TranItemDbDao {
 
     @Delete
     fun deleteOne(tranItemDb: TranItemDb)
+
+    @Query("SELECT count(*) FROM dictionary")
+    fun getSize(): Int
 //
 //    @Update
 //    fun updateOne(todo: TodoEntity)
