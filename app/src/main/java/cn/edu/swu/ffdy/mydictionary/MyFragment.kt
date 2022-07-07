@@ -17,13 +17,12 @@
 package cn.edu.swu.ffdy.mydictionary
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import cn.edu.swu.ffdy.mydictionary.R
 import cn.edu.swu.ffdy.mydictionary.adapter.TranItemDbAdapter
 import cn.edu.swu.ffdy.mydictionary.service.TranDbDatabase
 
@@ -31,7 +30,7 @@ import cn.edu.swu.ffdy.mydictionary.service.TranDbDatabase
 class MyFragment : Fragment() {
 
 //    val db = TranDbDatabase.getInstance(context as MainActivity)
-    lateinit var tranItemDbAdapter: TranItemDbAdapter
+    private lateinit var tranItemDbAdapter: TranItemDbAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

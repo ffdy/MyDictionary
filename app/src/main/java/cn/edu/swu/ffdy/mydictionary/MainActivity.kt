@@ -16,20 +16,18 @@
 
 package cn.edu.swu.ffdy.mydictionary
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
 import androidx.appcompat.app.ActionBar
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var manager: FragmentManager
-    val fragmentList = arrayListOf<Fragment>()
+    private lateinit var manager: FragmentManager
 
 //    companion object TAGS{
 //        val TAG_CHAT = "chat"
@@ -89,7 +87,7 @@ class MainActivity : AppCompatActivity() {
             val tran = manager.beginTransaction()
             tran.replace(R.id.nav_host, MainFragment()).commit()
             buttomNavigationView.selectedItemId = R.id.main_search
-            val editText = findViewById<EditText>(R.id.main_edit)
+            findViewById<EditText>(R.id.main_edit)
 //            editText.requestFocus()
         }
 

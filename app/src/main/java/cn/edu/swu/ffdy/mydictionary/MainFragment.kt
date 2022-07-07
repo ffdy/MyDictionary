@@ -20,16 +20,14 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import cn.edu.swu.ffdy.mydictionary.R
 import cn.edu.swu.ffdy.mydictionary.adapter.TranSearchDbAdapter
 import cn.edu.swu.ffdy.mydictionary.data.TranData
 import cn.edu.swu.ffdy.mydictionary.data.TranItemDb
@@ -46,12 +44,7 @@ import java.util.*
 class MainFragment : Fragment() {
     lateinit var inputDesc:String
     lateinit var tranSearchDbAdapter: TranSearchDbAdapter
-//    lateinit var db:TranDbDatabase
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+//    latent var db:TranDbDatabase
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -141,7 +134,7 @@ class MainFragment : Fragment() {
         }
     }
 
-    fun md5(content: String): String {
+    private fun md5(content: String): String {
         val hash = MessageDigest.getInstance("MD5").digest(content.toByteArray())
         val hex = StringBuilder(hash.size * 2)
         for (b in hash) {

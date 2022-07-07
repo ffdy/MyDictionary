@@ -27,13 +27,13 @@ import cn.edu.swu.ffdy.mydictionary.data.TranSearchDb
 import cn.edu.swu.ffdy.mydictionary.service.TranDbDatabase
 import cn.edu.swu.ffdy.mydictionary.MainActivity
 
-class TranSearchDbAdapter(private val tranSearchDbList:List<TranSearchDb>): RecyclerView.Adapter<TranSearchDbAdapter.TranSearchDbViewHolder>() {
-    val tranSearchDbs = ArrayList(tranSearchDbList)
+class TranSearchDbAdapter(tranSearchDbList:List<TranSearchDb>): RecyclerView.Adapter<TranSearchDbAdapter.TranSearchDbViewHolder>() {
+    private val tranSearchDbs = ArrayList(tranSearchDbList)
 
     class TranSearchDbViewHolder(itemView: View, tranSearchDbAdapter: TranSearchDbAdapter):RecyclerView.ViewHolder(itemView) {
-        val dstText = itemView.findViewById<TextView>(R.id.history_item_text_dst)
-        val srcText = itemView.findViewById<TextView>(R.id.history_item_text_src)
-        val deleteBtn = itemView.findViewById<ImageButton>(R.id.history_item_btn_delete)
+        val dstText: TextView = itemView.findViewById(R.id.history_item_text_dst)
+        val srcText: TextView = itemView.findViewById(R.id.history_item_text_src)
+        private val deleteBtn: ImageButton = itemView.findViewById(R.id.history_item_btn_delete)
         var currencyItem: TranSearchDb? = null
 
         init {
@@ -47,9 +47,8 @@ class TranSearchDbAdapter(private val tranSearchDbList:List<TranSearchDb>): Recy
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TranSearchDbViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_history,parent, false)
-        val holder = TranSearchDbViewHolder(view,  this)
-        return holder
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_history, parent, false)
+        return TranSearchDbViewHolder(view, this)
     }
 
     override fun onBindViewHolder(holder: TranSearchDbViewHolder, position: Int) {

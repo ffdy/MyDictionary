@@ -47,8 +47,7 @@ abstract class TranDbDatabase:RoomDatabase() {
         // Create and pre-populate the database. See this article for more details:
         // https://medium.com/google-developers/7-pro-tips-for-room-fbadea4bfbd1#4785
         private fun buildDatabase(context: Context): TranDbDatabase {
-            val DATABASE_NAME = "dictionary.db"
-            return Room.databaseBuilder(context, TranDbDatabase::class.java, DATABASE_NAME)
+            return Room.databaseBuilder(context, TranDbDatabase::class.java, "dictionary.db")
 
                 .allowMainThreadQueries()
                 .build()

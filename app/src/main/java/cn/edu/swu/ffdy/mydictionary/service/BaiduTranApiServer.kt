@@ -2,8 +2,6 @@ package cn.edu.swu.ffdy.mydictionary.service
 
 import cn.edu.swu.ffdy.mydictionary.data.TranData
 import retrofit2.Call
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 

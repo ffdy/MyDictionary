@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:text="总查词数"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -57,7 +57,7 @@
                     android:gravity="center"
                     android:id="@+id/setting_text_search_num"
                     tools:text="123"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
@@ -73,14 +73,14 @@
                 android:layout_height="wrap_content">
                 <TextView
                     android:text="词库词数"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:gravity="center"
                     android:id="@+id/setting_text_item_num"
                     tools:text="123"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </LinearLayout>

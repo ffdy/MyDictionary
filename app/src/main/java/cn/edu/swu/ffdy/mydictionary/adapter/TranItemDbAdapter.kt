@@ -27,14 +27,14 @@ import cn.edu.swu.ffdy.mydictionary.data.TranItemDb
 import cn.edu.swu.ffdy.mydictionary.service.TranDbDatabase
 import cn.edu.swu.ffdy.mydictionary.MainActivity
 
-class TranItemDbAdapter(private val tranItemDbList:List<TranItemDb>): RecyclerView.Adapter<TranItemDbAdapter.TranItemDbViewHolder>() {
-    val tranItemDbs = ArrayList(tranItemDbList)
+class TranItemDbAdapter(tranItemDbList:List<TranItemDb>): RecyclerView.Adapter<TranItemDbAdapter.TranItemDbViewHolder>() {
+    private val tranItemDbs = ArrayList(tranItemDbList)
 
     class TranItemDbViewHolder(itemView: View, tranItemDbAdapter: TranItemDbAdapter):
         RecyclerView.ViewHolder(itemView) {
-        val dstText = itemView.findViewById<TextView>(R.id.history_item_text_dst)
-        val srcText = itemView.findViewById<TextView>(R.id.history_item_text_src)
-        val deleteBtn = itemView.findViewById<ImageButton>(R.id.history_item_btn_delete)
+        val dstText: TextView = itemView.findViewById(R.id.history_item_text_dst)
+        val srcText: TextView = itemView.findViewById(R.id.history_item_text_src)
+        private val deleteBtn: ImageButton = itemView.findViewById(R.id.history_item_btn_delete)
         var currencyItem: TranItemDb? = null
 
         init {
@@ -48,9 +48,8 @@ class TranItemDbAdapter(private val tranItemDbList:List<TranItemDb>): RecyclerVi
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TranItemDbViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_history,parent, false)
-        val holder = TranItemDbViewHolder(view,  this)
-        return holder
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_history, parent, false)
+        return TranItemDbViewHolder(view, this)
     }
 
     override fun onBindViewHolder(holder: TranItemDbViewHolder, position: Int) {
@@ -62,11 +61,6 @@ class TranItemDbAdapter(private val tranItemDbList:List<TranItemDb>): RecyclerVi
 
     override fun getItemCount(): Int {
         return tranItemDbs.size
-    }
-
-    private fun addItem(tranItemDb: TranItemDb) {
-        tranItemDbs.add(0, tranItemDb)
-        notifyItemInserted(0)
     }
 
     private fun removeItem(position: Int) {
